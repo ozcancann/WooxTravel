@@ -1,0 +1,88 @@
+﻿﻿﻿@model WooxTravel.Entities.Destination
+
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-main-content">
+        <div style="background-image: url('@Model.ImageUrl'); background-size: cover; background-position: center;">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="content">
+
+                            <h4>@Model.Country @Model.City</h4>
+                            <div class="line-dec"></div>
+                            <h2>@Model.Title</h2>
+                            <p>@Model.Description</p>
+                            <div class="main-button">
+                                <a href="reservation.html">@Model.Country-@Model.City Turunu @Model.Price ₺ Hemen Rezervasyon Yapın!</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .hero {
+            background: url('@Model.ImageUrl') no-repeat center;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+        .hero {
+            background-image: url('@Model.ImageUrl');
+            background-size: cover;
+            background-position: center;
+            height: 1000px;
+        }
+
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

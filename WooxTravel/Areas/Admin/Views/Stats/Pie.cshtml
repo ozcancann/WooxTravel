@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Pie";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+<div class="d-flex justify-content-center align-items-center" style="padding-top: 100px; min-height: calc(100vh - 50px);">
+    <div class="card" style="width: 80%; max-width: 600px;">
+        <div class="card-header bg-gray2">
+            <div class="alert alert-info h4">Destinasyon Kapasiteleri Grafiği</div>
+        </div>
+        <div class="card-body">
+            <div class="chart-container" style="position: relative; height: auto; width: 100%;">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+        var ctx = document.getElementById("pieChart").getContext("2d");
+        var myPieChart = new Chart(ctx, {
+            type: "pie",
+            data: {
+                labels: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.DestinationTitles)), // Başlıklar
+                datasets: [{
+                    label: "Kapasiteler",
+                    data: @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.DestinationCapacities)), // Kapasiteler
+                    backgroundColor: [
+                        "#FF6384", // Renkler
+                        "#36A2EB",
+                        "#FFCE56",
+                        "#4BC0C0",
+                        "#9966FF",
+                        "#FF9F40"
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                legend: {
+                    position: "top",
+                },
+                title: {
+                    display: true,
+                    text: "Destinasyon Kapasiteleri"
+                },
+                animation: {
+                    animateScale: true,
+                    animateRotate: true
+                }
+            }
+        });
+</script>

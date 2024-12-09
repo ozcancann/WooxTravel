@@ -1,0 +1,146 @@
+﻿/** {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}*/
+
+body {
+    background-color: #ddd;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+}
+
+/* Kart Tasarımı */
+.front, .back {
+    position: absolute;
+    height: 214px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(135deg, #00b41a, #0050a8);
+    border-radius: 30px;
+    padding: 20px;
+    color: #fff;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    transition: transform 0.6s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.front {
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+.back {
+    transform: perspective(1000px) rotateY(180deg);
+}
+
+/* Kart Ön Yüz */
+.front .image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12px;
+}
+
+    .front .image img {
+        height: 35px;
+        object-fit: contain;
+    }
+
+.card-number-box {
+    padding: 30px 0;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.front .flexbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.box span {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+}
+
+.card-holder-name, .expiration {
+    font-size: 16px;
+    margin-top: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Form Tasarımı */
+form {
+    margin-top: 220px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.inputBox {
+    margin-bottom: 20px;
+}
+
+    .inputBox span {
+        display: block;
+        color: #666;
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+
+    .inputBox input,
+    .inputBox select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 15px;
+        background: #ddd;
+    }
+
+        .inputBox input:focus,
+        .inputBox select:focus {
+            outline: none;
+            border-color: #00b41a;
+        }
+
+form .flexbox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #00b41a, #0050a8);
+    border-radius: 30px;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/*  .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(123, 31, 162, 0.2);
+    }*/

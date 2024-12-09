@@ -1,0 +1,76 @@
+﻿@model WooxTravel.Entities.Destination
+@{
+    ViewBag.Title = "CreateDestination";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Tablolar</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Tablolar</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Temel Tablolar</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-gray2">
+                        <div class="alert alert-info h4">Destinasyon Ekleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            <label>Ülke Adı</label>
+                            @Html.TextBoxFor(x => x.Country, new { @class = "form-control" })
+                            <br />
+                            <label>Şehir Adı</label>
+                            @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+                            <br />
+                            <label>Tur Başlığı</label>
+                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control" })
+                            <br />
+                            <label>Gün-Gece</label>
+                            @Html.TextBoxFor(x => x.DayNight, new { @class = "form-control" })
+                            <br />
+                            <label>Kapasite</label>
+                            @Html.TextBoxFor(x => x.Capacity, new { @class = "form-control" })
+                            <br />
+                            <label>Kapak Görseli URL</label>
+                            @Html.TextBoxFor(x => x.ImageUrl, new { @class = "form-control" })
+                            <br />
+                            <label>Tur Fiyatı</label>
+                            @Html.TextBoxFor(x => x.Price, new { @class = "form-control" })
+                            <br />
+                            <label>Açıklama</label>
+                            @Html.TextAreaFor(x => x.Description, 5, 0, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-label-success" style="border-radius:30px">Destinasyon Ekle</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

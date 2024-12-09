@@ -1,0 +1,66 @@
+﻿@model WooxTravel.Entities.Reservation
+
+@{
+    ViewBag.Title = "CreateReservation";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container">
+    <div class="page-inner">
+        <div class="page-header">
+            <h3 class="fw-bold mb-3">Tablolar</h3>
+            <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                    <a href="#">
+                        <i class="icon-home"></i>
+                    </a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Tablolar</a>
+                </li>
+                <li class="separator">
+                    <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Temel Tablolar</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-gray2">
+                        <div class="alert alert-info h4">Rezervasyon Ekleme Sayfası</div>
+                    </div>
+                    <div class="card-body">
+
+                        <form method="post">
+                            <label>Müşteri Adı</label>
+                            @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                            <br />
+                            <label>Müşteri Telefonu</label>
+                            @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                            <br />
+                            <label>Kişi Sayısı</label>
+                            @Html.TextBoxFor(x => x.PersonCount, new { @class = "form-control" })
+                            <br />
+                            <label>Rezervasyon Tarihi</label>
+                            @Html.TextBoxFor(x => x.ReservationDate, new { @class = "form-control" })
+                            <br />
+                            <label>Açıklama</label>
+                            @Html.TextAreaFor(x => x.Description, 5, 0, new { @class = "form-control" })
+                            <br />
+                            <button class="btn btn-label-success" style="border-radius:30px">Rezervasyon Kaydet</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

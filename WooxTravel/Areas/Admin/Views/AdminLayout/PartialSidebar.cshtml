@@ -1,0 +1,234 @@
+﻿<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+﻿<div class="sidebar" data-background-color="dark">
+    <div class="sidebar-logo">
+        <div class="logo-header" data-background-color="dark">
+            <a href="~/kaiadmin-lite-1.2.0/index.html" class="logo">
+                <img src="~/kaiadmin-lite-1.2.0/assets/img/kaiadmin/logo_light.svg"
+                     alt="navbar brand"
+                     class="navbar-brand"
+                     height="20" />
+            </a>
+            <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                    <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                    <i class="gg-menu-left"></i>
+                </button>
+            </div>
+            <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+            </button>
+        </div>
+
+    </div>
+    <div class="sidebar-wrapper scrollbar scrollbar-inner">
+        <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">SAYFALAR</h4>
+                </li>
+                <li class="nav-item">
+                    <a href="/Default/Index/">
+                        <i class="fas fa-home"></i>
+                        <p>Siteye Git</p>
+                    </a>
+
+                    <a href="/Admin/Dashboard/Index/">
+                        <i class="fas fa-dashboard"></i>
+                        <p>Dashboard & Widget</p>
+                    </a>
+
+                    @*//-------------------------------------------------------//*@
+
+<li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#profile">
+                        <i class="fas fa-user-group"></i>
+                        <p>Profil</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="profile">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Profile/Index/">
+                                    <i class="fas fa-refresh"></i>
+                                    <span class="sub-item">Profil Bilgisi Düzenleme</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#category">
+                        <i class="fas fa-list-ol"></i>
+                        <p>Kategori</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="category">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Category/CategoryList/">
+                                    <i class="fas fa-list-check"></i>
+                                    <span class="sub-item">Kategori Listesi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Category/CreateCategory/">
+                                    <i class="fas fa-square-plus"></i>
+                                    <span class="sub-item">Yeni Kategori Ekleme</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#destination">
+                        <i class="fas fa-route"></i>
+                        <p>Destinasyon</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="destination">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Destination/DestinationList/">
+                                    <i class="fas fa-list-check"></i>
+                                    <span class="sub-item">Destinasyon Listesi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Destination/CreateDestination/">
+                                    <i class="fas fa-square-plus"></i>
+                                    <span class="sub-item">Yeni Destinasyon Ekle</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#reservation">
+                        <i class="icon icon-reload"></i>
+                        <p>Rezervasyon</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="reservation">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Reservation/ReservationList/">
+                                    <i class="fas fa-list-check"></i>
+                                    <span class="sub-item">Rezervasyon Listesi</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Reservation/CreateReservation/">
+                                    <i class="fas fa-square-plus"></i>
+                                    <span class="sub-item">Yeni Rezervasyon Ekle</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#message">
+                        <i class="fas fa-mail-bulk"></i>
+                        <p>Mesaj Kutusu</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="message">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Message/Inbox/">
+                                    <i class="fas fa-mail-forward"></i>
+                                    <span class="sub-item">Gelen Mesajlar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Message/Sendbox/">
+                                    <i class="fas fa-mail-reply"></i>
+                                    <span class="sub-item">Gönderilen Mesajlar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Message/SendMessage/">
+                                    <i class="fas fa-plus"></i>
+                                    <span class="sub-item">Yeni Mesaj Gönder</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#stats">
+                        <i class="fas fa-chart-column"></i>
+                        <p>İstatistik</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="stats">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Stats/Stats/">
+                                    <i class="fas fa-info"></i>
+                                    <span class="sub-item">İstatistikler</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Stats/Bar/">
+                                    <i class="fas fa-bar-chart"></i>
+                                    <span class="sub-item">Bar Grafiği</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Stats/Pie/">
+                                    <i class="fas fa-pie-chart"></i>
+                                    <span class="sub-item">Pie Grafiği</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Stats/Line/">
+                                    <i class="fas fa-line-chart"></i>
+                                    <span class="sub-item">Line Grafiği</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Admin/Stats/Donut/">
+                                    <i class="fas fa-pie-chart"></i>
+                                    <span class="sub-item">Donut Grafiği</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a data-bs-toggle="collapse" href="#purchase">
+                        <i class="fas fa-credit-card-alt"></i>
+                        <p>Ödeme</p>
+                        <span class="accordion"></span>
+                    </a>
+                    <div class="collapse" id="purchase">
+                        <ul class="nav nav-item">
+                            <li>
+                                <a href="/Admin/Purchase/CreditCart">
+                                    <i class="fas fa-turkish-lira"></i>
+                                    <span class="sub-item">Ödeme Ekranı</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+

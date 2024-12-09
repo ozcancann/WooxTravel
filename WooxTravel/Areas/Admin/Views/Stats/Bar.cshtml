@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Bar";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="row">
+    <div class="d-flex justify-content-center align-items-center" style="padding-top: 100px; min-height: calc(100vh - 50px);">
+        <div class="card">
+            <div class="card-header">
+                <div class="col-md-12">
+                    <div class="card-header bg-gray2">
+                        <div class="alert alert-info h4">Tur Fiyat Grafiği</div>
+                        <canvas id="myChart" width="1000" height="600"></canvas>
+
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                        <script type="text/javascript">
+                                        window.onload = function () {
+
+                                            var cityName = @Html.Raw(Json.Encode(ViewBag.cityName));
+                                            var cityPrice = @Html.Raw(Json.Encode(ViewBag.cityPrice));
+
+
+                                            var ctx = document.getElementById('myChart').getContext('2d');
+                                            var myChart = new Chart(ctx, {
+                                                type: 'bar',
+                                                data: {
+                                                    labels: cityName,
+                                                    datasets: [{
+                                                        label: 'Tur Fiyatları',
+                                                        data: cityPrice,
+                                                        backgroundColor: 'rgba(500, 180, 380, 0.2)',
+                                                        borderColor: 'rgba(80 120 50 0)',
+                                                        borderWidth: 2
+                                                    }]
+                                                },
+                                                options: {
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: true
+                                                        }
+                                                    }
+                                                }
+                                            });
+                                        };
+                        </script>
+
+                        <style>
+                            #chartContainer {
+                                width: 100%;
+                                height: 500px;
+                                margin: auto;
+                            }
+                        </style>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

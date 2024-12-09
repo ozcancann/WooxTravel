@@ -1,0 +1,75 @@
+﻿@model List<WooxTravel.Entities.Destination>
+
+@{
+    Layout = null;
+}
+
+<section id="section-1">
+    <div class="content-slider">
+        @{ int index = 1; }
+        @foreach (var item in Model.Take(4))
+        {
+            <input type="radio" id="banner@(index)" class="sec-1-input" name="banner" @(index == 1 ? "checked" : "") />
+            index++;
+        }
+
+        <div class="slider">
+            @{ index = 1; }
+            @foreach (var item2 in Model.Take(4))
+            {
+                <div id="top-banner-@(index)" class="banner" style="background-image: url('@item2.ImageUrl'); background-size: cover; background-position: center;">
+                    <div class="banner-inner-wrapper header-text">
+                        <div class="main-caption">
+                            <h2> @item2.Country</h2>
+                            <h3>@item2.City</h3>
+                            <h1>@item2.Title</h1>
+
+                        </div>
+                        <div class="container">
+                            <div class="row">
+
+                                <div class="more-info">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-user"></i>
+                                            <h4><span>TUR KAPASİTESİ</span><br>@item2.Capacity</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-calendar"></i>
+                                            <h4><span>GÜN - GECE</span><br>@item2.DayNight Gün  @(@item2.DayNight - 1) Gece</h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <i class="fa fa-calculator"></i>
+                                            <h4><span>TUR FİYATI</span><br>₺@item2.Price </h4>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-6 col-6">
+                                            <div class="border-button">
+                                                <a style="" class="accordion" href="~/Countries/index/@item2.DestinationId">Tur Hakkında Daha Fazla Bilgi Almak İçin Tıklaynız</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                index++;
+            }
+        </div>
+
+        <nav>
+            <div class="controls">
+                @{ index = 1; }
+                @foreach (var item in Model.Take(4))
+                {
+                    <label for="banner@(index)">
+                        <span class="progressbar"><span class="progressbar-fill"></span></span><span class="text">@index</span>
+                    </label>
+                    index++;
+                }
+            </div>
+        </nav>
+    </div>
+</section>
+
